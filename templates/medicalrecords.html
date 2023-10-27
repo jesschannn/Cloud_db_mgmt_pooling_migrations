@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+
+{% block content %}
+<section class="mb-6 table-container">
+    <div class="table">
+        <h2 class="text-xl mb-2">Medical Records Table</h2>
+        <table class="table-auto">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">Patient ID</th>
+                    <th class="px-4 py-2">Diagnosis</th>
+                    <th class="px-4 py-2">Admission Date</th>
+                    <th class="px-4 py-2">Discharge Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for medical_records in data2 %}
+                <tr>
+                    <td class="border px-4 py-2">{{ medical_records.patient_id }}</td>
+                    <td class="border px-4 py-2">{{ medical_records.diagnosis }}</td>
+                    <td class="border px-4 py-2">{{ medical_records.admission_date }}</td>
+                    <td class="border px-4 py-2">{{ medical_records.discharge_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
